@@ -21,7 +21,10 @@ const Questionaire = ({ handleAnswer, data: { question, correct_answer, incorrec
       </div>
       <div className="grid grid-cols-2 gap-6 mt-6">
         {shuffledAnswers.map((answer) => (
-          <button className={`${correct_answer === answer ? 'bg-blue-200' : 'bg-yellow-200'} p-4 text-blue-500 font-semibold rounded-lg shadow-md`} onClick={() => handleAnswer(answer)}>{answer}</button>
+          <button
+            className='bg-yellow-200 p-4 text-blue-500 font-semibold rounded-lg shadow-md'
+            onClick={() => handleAnswer(answer)}
+            dangerouslySetInnerHTML={{ __html: answer }}></button>
         ))}
       </div>
     </div>
